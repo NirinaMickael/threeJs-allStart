@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Account } from '../../schema/account';
+import { SignupType } from '../../schema/SignupType';
 import { MainService } from '../main.service';
 
 @Injectable({
@@ -28,5 +29,9 @@ export class AuthService {
   login (body:Account):Observable<any>{
     console.log(body)
     return this.service._POST('/api/auth/signin',body);
+  }
+  signup(body: SignupType): Observable<any> {
+    console.log(body)
+    return this.service._POST('/api/auth/signup', body);
   }
 }
