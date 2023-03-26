@@ -2,9 +2,9 @@
   class="signin-container w-screen grid grid-cols-2 transition duration-500 ease-in-out"
 >
   <div class="conteiner-form w-full">
-    <div class="center w-[60%] m-auto">
+    <div class="center w-[60%] m-auto translate-y-1/4">
       <div class="header-form w-2/3 m-auto">
-        <p class="w-10 h-10 bg-red-300 rounded-full m-auto"></p>
+        <p class="w-10 h-10 bg-red-600 rounded-full m-auto"></p>
         <h1 class="text-center m-3 text-3xl">Signup !!</h1>
       </div>
       <form
@@ -12,8 +12,8 @@
         class="w-10/12 m-auto mt-5"
         (ngSubmit)="submit()"
       >
-        <div class="d-flex">
-          <div class="form-email w-5/12 my-5">
+        <div class="grid grid-cols-2">
+          <div class="form-email  m-2">
             <input
               type="email"
               name="email"
@@ -22,49 +22,45 @@
               class="w-full p-3 outline-none rounded-md bg-transparent bg-gray-200 border-2"
             />
           </div>
-          <div class="form-email w-5/12 my-5">
+          <div class="form-email  mx-auto m-2">
             <input
-              type="text"
-              placeholder="address"
-              formControlName="address"
+              placeholder="name"
+              formControlName="name"
               class="w-full p-3 outline-none rounded-md bg-transparent bg-gray-200 border-2"
             />
           </div>
         </div>
         <div>
-          <div class="form-email mx-auto my-5">
-            <input
-              type="text"
-              formControlName="city"
-              placeholder="Ville"
-              class="w-full p-3 outline-none rounded-md bg-transparent bg-gray-200 border-2"
-            />
-          </div>
-          <div class="form-email mx-auto my-5">
-            <input
-              type="text"
-              placeholder="Pays"
-              formControlName="country"
-              class="w-full p-3 outline-none rounded-md bg-transparent bg-gray-200 border-2"
-            />
+          <div class="grid grid-cols-2">
+            <div class="form-email mx-auto my-5">
+              <input
+                type="text"
+                formControlName="city"
+                placeholder="Ville"
+                class="w-full p-3 outline-none rounded-md bg-transparent bg-gray-200 border-2"
+              />
+            </div>
+            <div class="form-email mx-auto  ">
+              <label for="countries" class="block text-sm  font-medium dark:text-white">Select an option</label>
+              <select id="countries" class="p-4">
+                <option selected>Choose a country</option>
+                <option value="MG">Madagascar</option>
+                <option value="CA"></option>
+                <option value="FR">France</option>
+                <option value="DE">Germany</option>
+              </select>
+            </div>
           </div>
         </div>
-        <div class="form-email w-5/12 mx-auto my-5">
+        <div class="form-email  m-2">
           <input
             type="text"
-            placeholder="Phone"
-            formControlName="phone"
+            placeholder="address"
+            formControlName="address"
             class="w-full p-3 outline-none rounded-md bg-transparent bg-gray-200 border-2"
           />
         </div>
-        <div class="form-email w-5/12 mx-auto my-5">
-          <input
-            placeholder="name"
-            formControlName="name"
-            class="w-full p-3 outline-none rounded-md bg-transparent bg-gray-200 border-2"
-          />
-        </div>
-        <div class="container-password w-5/12 mx-auto my-5">
+        <div class="container-password mx-auto my-5">
           <input
             type="password"
             name="password"
@@ -73,8 +69,8 @@
             class="w-full p-3 outline-none bg-transparent bg-gray-200 rounded-md border-2"
           />
         </div>
-        <div class="container-submit w-5/12 mx-auto">
-          <button type="submit" class="w-full rounded-lg bg-red-400 py-2">
+        <div class="container-submit  mx-auto">
+          <button type="submit" class="w-full rounded-lg bg-red-600 py-2">
             Register
           </button>
         </div>
@@ -83,13 +79,9 @@
           <span class="text-gray-400 font-bold">Or</span>
           <hr class="border-gray-300 w-1/2 ml-4" />
         </div>
-        <div class="container-link w-5/12 m-auto my-5">
-          <h1 class="text-gray-300 text-center">
-            <a
-              class="text-sm font-bold text-blue-900 cursor-pointer"
-              routerLink="/"
-            >
-              Sign in
+        <div class="container-link  w-10/12 m-auto my-10">
+          <h1 class="text-gray-900  text-center">
+            don't have any account  <a routerLink="../login" class="font-bold " > SignIn
             </a>
           </h1>
         </div>

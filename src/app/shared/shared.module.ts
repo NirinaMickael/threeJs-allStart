@@ -7,6 +7,7 @@ import { ShorpingCardComponent } from './components/shorping-card/shorping-card.
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ProductItemsComponent } from './components/product-items/product-items.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ProductItemsComponent } from './components/product-items/product-items.
     CardShopComponent,
     ShorpingCardComponent,
     ProductItemsComponent,
+    ContactComponent,
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { ProductItemsComponent } from './components/product-items/product-items.
     LoginComponent,
     SignupComponent,
     CardShopComponent,
-    ShorpingCardComponent
+    ShorpingCardComponent,
+    ContactComponent
   ]
 })
 export class SharedModule { }
