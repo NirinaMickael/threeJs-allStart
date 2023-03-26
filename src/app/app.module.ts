@@ -6,10 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { VirtualVisitComponent } from './virtual-visit/virtual-visit.component';
+import { PopupComponent } from './popup/popup.component';
 @NgModule({
   declarations: [
     AppComponent,
     VirtualVisitComponent,
+    PopupComponent,
   ],
   imports: [
     BrowserModule,
