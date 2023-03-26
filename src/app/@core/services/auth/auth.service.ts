@@ -14,6 +14,13 @@ export class AuthService {
     return localStorage.getItem('access-token');
   }
 
+  isAuthenticated(): boolean {
+    const token = this.getAccessToken();
+    // Check whether the refresh token is expired and return
+    // true or false
+    return token ? true: false;
+  }
+
   getRefreshToken() {
     return localStorage.getItem('refresh-token');
   }
