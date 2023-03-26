@@ -13,6 +13,7 @@ import materialDefault from './utils/Materials';
 import { VirtualService } from '../@core/services/virtual/virtual.service';
 import { Product } from '../@core/schema/product';
 import { dataProduct } from './db/fake';
+import { OeuvreService } from '../@core/services/oeuvre/oeuvre.service';
 @Component({
   selector: 'app-virtual-visit',
   templateUrl: './virtual-visit.component.html',
@@ -28,7 +29,7 @@ export class VirtualVisitComponent implements OnInit, AfterViewInit {
   t : any = [];
   delta!: number;
   prevTime: number = 0;
-
+  alert !:boolean;
   //#region default value params;
   cameraDefaultPosition = new Vector3(-3, 2, 1.5);
   enableOrbitControls = false;
@@ -60,13 +61,17 @@ export class VirtualVisitComponent implements OnInit, AfterViewInit {
   allProduct !: Product[] ;
   currentProduct !: Product;
   containerSelector = '#virtual-visit';
-  constructor(private virtual:VirtualService) { 
+  constructor(private virtual:VirtualService , private prod : OeuvreService) { 
     this.raycaster = new THREE.Raycaster();
   }
 
   ngOnInit(): void {
     this.virtual.cardShop$.subscribe(e=>this.CardShop=e);
     this.virtual.ListShop$.subscribe(e=>this.ListShop=e);
+    this.virtual.cardShop$.subscribe(e=>this.alert=e);
+  }
+  isOpen(e:any){
+    this.virtual.alert$.next(e);
   }
   addAction(e:any){
     console.log(e);
@@ -91,8 +96,10 @@ export class VirtualVisitComponent implements OnInit, AfterViewInit {
     //   this.CardShop = e;
     //   this.init(!a && !e)
     // })
-    this.allProduct = dataProduct;
-    this.init();
+    this.prod.getAllOeuvre().subscribe((res)=>{
+      this.allProduct = (res as any)?.data;
+      this.init();
+    });
   }
   init() {
     this.initScene();

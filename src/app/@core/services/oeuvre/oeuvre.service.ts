@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, of } from 'rxjs';
+import { of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -8,11 +9,12 @@ import { environment } from 'src/environments/environment';
 })
 export class OeuvreService {
 
-  private baseUrl = environment.SERVER_URL + '/api/oeuvres';
+  private baseUrl = environment.SERVER_URL + '/api/product';
   oeuvres: any = []; 
   constructor(private http: HttpClient) { }
 
   getAllOeuvre() {
+    console.log(this.baseUrl);
     return this.http.get(this.baseUrl).pipe(catchError(() => of({data: []})));
   }
 

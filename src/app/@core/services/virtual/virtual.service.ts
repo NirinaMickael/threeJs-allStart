@@ -7,5 +7,6 @@ import { BehaviorSubject } from 'rxjs';
 export class VirtualService {
   cardShop$  = new BehaviorSubject(false);
   ListShop$  = new BehaviorSubject(false);
+  alert$ = new BehaviorSubject(false);
   constructor() { }
 }
