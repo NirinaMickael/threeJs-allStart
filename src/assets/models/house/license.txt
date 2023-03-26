@@ -1,0 +1,11 @@
+Model Information:
+* title:	VR Gallery No 5 Building with artwork by DrCG
+* source:	https://sketchfab.com/3d-models/vr-gallery-no-5-building-with-artwork-by-drcg-bdc87287ed0142ae8c5d77296a213120
+* author:	DrCG (https://sketchfab.com/drcg)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "VR Gallery No 5 Building with artwork by DrCG" (https://sketchfab.com/3d-models/vr-gallery-no-5-building-with-artwork-by-drcg-bdc87287ed0142ae8c5d77296a213120) by DrCG (https://sketchfab.com/drcg) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

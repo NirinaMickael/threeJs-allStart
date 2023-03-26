@@ -1,0 +1,63 @@
+<div class="signin-container w-screen h-screen  grid grid-cols-2 duration-500 ease-in-out">
+    <div class="container-img w-full">
+      <img src="assets/images/background.png" alt="image" class=" w-screen h-screen" >
+    </div>
+    <div class="conteiner-form w-full  h-screen bg-slate-500">
+      <div class="center w-[60%] m-auto h-3/4 translate-y-1/4">
+        <div class="header-form w-2/3 m-auto">
+          <p class="w-10 h-10 bg-red-300 rounded-full m-auto "></p>
+          <h1 class="text-center m-3 text-3xl">HELLO EVERYBODY !!</h1>
+          <h3 class="text-sm text-center text-gray-400">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, rem
+            possimus incidunt ratione voluptatum veritatis modi doloribus
+          </h3>
+        </div>
+        <form
+          class="  w-10/12 m-auto mt-10 h-3/5"
+          [formGroup]="AccountForm"
+        >
+          <div class="form-email w-10/12 mx-auto my-10">
+            <input
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              class="w-full p-3 outline-none rounded-md bg-transparent bg-gray-200 border-2"
+              formControlName="email"
+            />
+          </div>
+          <div class="container-password w-10/12 mx-auto  my-10">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              class="w-full p-3 outline-none bg-transparent bg-gray-200 rounded-md border-2"
+              formControlName="password"
+            />
+          </div>
+          <div class="container-submit w-10/12 mx-auto">
+            <button
+              type="submit"
+              class="w-full rounded-lg bg-red-400 py-2"
+              (click)="onSubmit($event)"
+            >
+              Login
+            </button>
+          </div>
+          <div class="container-auth w-10/12 flex m-auto my-5">
+            <hr class="border-gray-300 w-1/2 mr-4" />
+            <span class="text-gray-400 font-bold">Or</span>
+            <hr class="border-gray-300 w-1/2 ml-4" />
+          </div>
+          <div class="container-auth w-10/12 grid grid-cols-2 m-auto my-5">
+            <!-- <FaceBoookLogin />
+            <GooogleAuth /> -->
+          </div>
+          <div class="container-link  w-10/12 m-auto my-10">
+            <h1 class="text-gray-300 text-center">
+              
+            </h1>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
