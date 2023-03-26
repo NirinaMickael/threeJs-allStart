@@ -1,22 +1,19 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { VirtualVisitComponent } from './virtual-visit/virtual-visit.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { VirtualVisitComponent } from "./virtual-visit/virtual-visit.component";
 
 const routes: Routes = [
-  {path: 'vv', component: VirtualVisitComponent},
+  { path: "vv", component: VirtualVisitComponent },
+
   {
-    path:'',
-    children: [
-      {
-        path:'',
-        loadChildren : ()=>import('./pages/auth/auth.module').then(m=>m.AuthModule)
-      }
-    ]
-  }
+    path: "",
+    loadChildren: () =>
+      import("./pages/pages.module").then((m) => m.PagesModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
