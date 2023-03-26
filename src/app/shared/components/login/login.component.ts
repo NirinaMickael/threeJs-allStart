@@ -30,7 +30,8 @@ export class LoginComponent implements OnInit {
     };
     // this.router.navigate(["/vv"])
     this.authService.login(payload).subscribe((resp)=>{
-      console.log(resp)
+      this.authService.storeTokens(JSON.stringify(resp))
+      this.router.navigate(["/vv"])
     });
   }
 }

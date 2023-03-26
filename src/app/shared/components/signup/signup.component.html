@@ -1,1 +1,106 @@
-<p>signup works!</p>
+<div
+  class="signin-container w-screen grid grid-cols-2 transition duration-500 ease-in-out"
+>
+  <div class="conteiner-form w-full">
+    <div class="center w-[60%] m-auto">
+      <div class="header-form w-2/3 m-auto">
+        <p class="w-10 h-10 bg-red-300 rounded-full m-auto"></p>
+        <h1 class="text-center m-3 text-3xl">Signup !!</h1>
+      </div>
+      <form
+        [formGroup]="SignupForm"
+        class="w-10/12 m-auto mt-5"
+        (ngSubmit)="submit()"
+      >
+        <div class="d-flex">
+          <div class="form-email w-5/12 my-5">
+            <input
+              type="email"
+              name="email"
+              formControlName="email"
+              placeholder="E-mail"
+              class="w-full p-3 outline-none rounded-md bg-transparent bg-gray-200 border-2"
+            />
+          </div>
+          <div class="form-email w-5/12 my-5">
+            <input
+              type="text"
+              placeholder="address"
+              formControlName="address"
+              class="w-full p-3 outline-none rounded-md bg-transparent bg-gray-200 border-2"
+            />
+          </div>
+        </div>
+        <div>
+          <div class="form-email mx-auto my-5">
+            <input
+              type="text"
+              formControlName="city"
+              placeholder="Ville"
+              class="w-full p-3 outline-none rounded-md bg-transparent bg-gray-200 border-2"
+            />
+          </div>
+          <div class="form-email mx-auto my-5">
+            <input
+              type="text"
+              placeholder="Pays"
+              formControlName="country"
+              class="w-full p-3 outline-none rounded-md bg-transparent bg-gray-200 border-2"
+            />
+          </div>
+        </div>
+        <div class="form-email w-5/12 mx-auto my-5">
+          <input
+            type="text"
+            placeholder="Phone"
+            formControlName="phone"
+            class="w-full p-3 outline-none rounded-md bg-transparent bg-gray-200 border-2"
+          />
+        </div>
+        <div class="form-email w-5/12 mx-auto my-5">
+          <input
+            placeholder="name"
+            formControlName="name"
+            class="w-full p-3 outline-none rounded-md bg-transparent bg-gray-200 border-2"
+          />
+        </div>
+        <div class="container-password w-5/12 mx-auto my-5">
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            formControlName="password"
+            class="w-full p-3 outline-none bg-transparent bg-gray-200 rounded-md border-2"
+          />
+        </div>
+        <div class="container-submit w-5/12 mx-auto">
+          <button type="submit" class="w-full rounded-lg bg-red-400 py-2">
+            Register
+          </button>
+        </div>
+        <div class="container-auth w-5/12 flex m-auto my-5">
+          <hr class="border-gray-300 w-1/2 mr-4" />
+          <span class="text-gray-400 font-bold">Or</span>
+          <hr class="border-gray-300 w-1/2 ml-4" />
+        </div>
+        <div class="container-link w-5/12 m-auto my-5">
+          <h1 class="text-gray-300 text-center">
+            <a
+              class="text-sm font-bold text-blue-900 cursor-pointer"
+              routerLink="/"
+            >
+              Sign in
+            </a>
+          </h1>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="w-full">
+    <img
+      src="assets/images/background.png"
+      alt="background"
+      class="h-screen w-screen"
+    />
+  </div>
+</div>

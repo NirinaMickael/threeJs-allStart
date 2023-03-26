@@ -5,7 +5,7 @@ import { SignupComponent } from 'src/app/shared/components/signup/signup.compone
 
 const routes: Routes = [
   {
-    path:"",
+    path:"login",
     component:LoginComponent
   },
   {
