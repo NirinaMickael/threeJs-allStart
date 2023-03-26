@@ -1,4 +1,4 @@
 <div id="virtual-visit"></div>
 <app-card-shop  *ngIf="CardShop" [product]="currentProduct" (addCard)="addAction($event)" (cancelCard)="cancelAction($event)" ></app-card-shop>
-{{ListShop}}
 <app-shorping-card  *ngIf="ListShop" (closePanel)="closeAction($event)" ></app-shorping-card>
+<app-popup></app-popup>
