@@ -19,7 +19,7 @@ export class VirtualVisit {
   camera!: THREE.PerspectiveCamera;
   container!: Element;
   orbitControl!: OrbitControls;
-
+  t : any = [];
   delta!: number;
   prevTime: number = 0;
 
@@ -47,7 +47,7 @@ export class VirtualVisit {
   startY = 0;
   referencePosition!: THREE.Mesh;
   lastMove: any;
-
+  textureLoader: THREE.TextureLoader = new THREE.TextureLoader();
   modelObjects: any[] = [];
   
 
@@ -123,7 +123,28 @@ export class VirtualVisit {
           this.modelObjects.push(obj);
           inspectModel(obj as Mesh, this.scene)
         }
+        if (obj.name.includes('Art_Work_')) {
+          // let oeuvreName = obj.name.replace('__', '_');
+          // oeuvreName = oeuvreName.replace('_tableau', '');
+          // const oeuvre = this.oeuvres.find(o => o.objectName === oeuvreName);
+          // obj.visible = false;
+
+          // if (oeuvre && obj.name[obj.name.length - 1] === 'u') {
+           this.textureLoader.load("/assets/images/ok.jpg",(texture)=>{
+            texture.flipY = true;
+            (obj as Mesh<any, MeshBasicMaterial>).material.map = texture;
+            (obj as Mesh<any, MeshBasicMaterial>).material.needsUpdate = true;
+            (obj as any).material.map.encoding = THREE.sRGBEncoding;
+            });
+          //   texture.flipY = false;
+          //   (obj as Mesh<any, MeshBasicMaterial>).material.map = texture;
+          //   (obj as Mesh<any, MeshBasicMaterial>).material.needsUpdate = true;
+          //   (obj as any).material.map.encoding = THREE.sRGBEncoding;
+
+          // }
+        }
       })
+      
       this.scene.add(result.scene);
     })
 
@@ -150,7 +171,9 @@ export class VirtualVisit {
             (obj as Mesh<any, MeshStandardMaterial>).material.needsUpdate = true;
           }
         }
+        
       })
+      
       result.scene.scale.set(0.7, 0.7, 0.7);
       result.scene.rotation.y = Math.PI/2;
       result.scene.position.x = -5;
@@ -265,7 +288,11 @@ export class VirtualVisit {
           .duration(200 * disptance)
           .start();
       } else {
-        console.log(obj, intersections[0].point);
+        this.t.push({
+          name:obj.name,
+          position:intersections[0].point
+        })
+        console.log(JSON.stringify(this.t))
       }
     }
   }

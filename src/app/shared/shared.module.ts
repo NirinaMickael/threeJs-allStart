@@ -5,7 +5,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { CardShopComponent } from './components/card-shop/card-shop.component';
 import { ShorpingCardComponent } from './components/shorping-card/shorping-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { RouterModule } from '@angular/router';
+import { ProductItemsComponent } from './components/product-items/product-items.component';
 
 
 @NgModule({
@@ -13,16 +14,19 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     SignupComponent,
     CardShopComponent,
-    ShorpingCardComponent
+    ShorpingCardComponent,
+    ProductItemsComponent,
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    RouterModule
   ],
   exports :[
     LoginComponent,
     SignupComponent,
-    CardShopComponent
+    CardShopComponent,
+    ShorpingCardComponent
   ]
 })
 export class SharedModule { }
